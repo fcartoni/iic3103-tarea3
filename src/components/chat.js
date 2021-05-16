@@ -30,7 +30,7 @@ function Chat({lista}) {
         <div className="chat-box">
             {mssgChat.map(element => {
                 if (element) { return (
-                    <p>{element.date} <br></br>{element.name}: {element.message}</p>)
+                    <p>{Date(element.date)} <br></br>{element.name}: {element.message}</p>)
                 }})}
         </div>
     </div>
