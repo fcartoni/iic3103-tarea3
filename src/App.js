@@ -17,19 +17,20 @@ function App() {
     setSocket(connect_socket)
   }, []);
   const getNickname = (username) => {
-    if (username) {
+    // if (username!=="") {
       setNickname(username)
-    }};
+    // }
+  };
   const lista = [socket, nickname];
   const handleSubmit = (username) => {
     username.preventDefault();
-    if (nickname!="") {
+    if (nickname!=="" ) {
       setShowPage(true);
     }
     
   }
   console.log("showPage");
-  console.log(showPage)
+  console.log(showPage);
   return (
     <div>
       {socket?
@@ -42,11 +43,11 @@ function App() {
           )
         :
         ( <div className="nickname">
-          <form className="form-container" onSubmit={nickname => {handleSubmit(nickname)}}>
+          <form className="form-containerr" onSubmit={nickname => {handleSubmit(nickname)}}>
             <div className="align">
             <p>Escribe tu Nickname:</p>
             <input align="center" type="text" value={nickname} onChange={nickname => getNickname((nickname.target.value))} ></input>
-            <input className="button-info-flights" type="submit" value="Submit"></input>
+            <input className="button-nickname" type="submit" value="Submit"></input>
             </div>
           </form>
           </div> )}

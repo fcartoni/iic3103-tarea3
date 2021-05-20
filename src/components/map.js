@@ -15,7 +15,6 @@ const markerIcon = new Icon({
 
 function Map({socket}) {
   const [infoFlights, setInfoFlights] = useState([]);
-  //const [line, setLine] = useState([]);
   const purpleOptions = { color: 'purple' };
   const [allPositions, setAllPositions] = useState([]);
 
@@ -26,7 +25,8 @@ function Map({socket}) {
         })
     socket.on("FLIGHTS", data => {
       setInfoFlights(data);
-      }) 
+      })
+
     ///return () => socket.disconnect();
     
   }, []);
@@ -37,7 +37,7 @@ function Map({socket}) {
 
   return (
     <div>
-        <h2>Mapa en vivo</h2>
+        <h2 className="color-font">Mapa en vivo</h2>
         <p> <MapContainer center={[-33.4513, -70.6653]} zoom={1} scrollWheelZoom={false}>
             <TileLayer
                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -61,26 +61,29 @@ function Map({socket}) {
             })};
             </MapContainer> </p>
             <button onClick={getFlights} className='button-info-flights'>Información de Vuelos</button>
-        <h3> Información de los vuelos: </h3>
+        
         {infoFlights.map(element => {
         if (element) { return (
-        <ul>
-            <li> Código de vuelo: {element.code} </li>
-            <li> Aerolínea: {element.airline}</li> 
-            <li> Origen (lat, long): {element.origin} </li>
-            <li> Destino (lat, long): {element.destination} </li>
-            <li> Avión: {element.plane} </li>
-            <li> Asientos: {element.seats} </li>
-            <li> Pasajeros:
-                     {element.passengers.map(pasajero => {
-                        if (pasajero) { return (
-                            <ul>
-                                <li>Nombre: {pasajero.name}, Edad: {pasajero.age}</li>
-                            </ul>
-                        ) }
-                    })}                
-            </li>
-        </ul>
+        <div>
+          <h3> Información de los vuelos: </h3>
+          <ul>
+              <li> Código de vuelo: {element.code} </li>
+              <li> Aerolínea: {element.airline}</li> 
+              <li> Origen (lat, long): {element.origin} </li>
+              <li> Destino (lat, long): {element.destination} </li>
+              <li> Avión: {element.plane} </li>
+              <li> Asientos: {element.seats} </li>
+              <li> Pasajeros:
+                      {element.passengers.map(pasajero => {
+                          if (pasajero) { return (
+                              <ul>
+                                  <li>Nombre: {pasajero.name}, Edad: {pasajero.age}</li>
+                              </ul>
+                          ) }
+                      })}                
+              </li>
+          </ul>
+        </div>
         )
         }
         })}

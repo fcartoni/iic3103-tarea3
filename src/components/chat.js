@@ -17,15 +17,13 @@ function Chat({lista}) {
         socket.emit("CHAT", {"name": nickname, "message": mssgSent});     
         setMssgSent("")
         };
-    console.log(nickname)
-    console.log(mssgSent)
     return(
     <div >
-        <h3>Chat</h3>
-        <form onSubmit={getMssgs}>
+        <h3 className="color-font">Centro de Control</h3>
+        <form className="form-container" onSubmit={getMssgs}>
             <p>Escribe algo:</p>
             <input align="center" type="text" value={mssgSent} onChange={e => setMssgSent(e.target.value)}></input>
-            <input type="submit" value="Send"></input>
+            <input className="button-chat" type="submit" value="Send"></input>
         </form>
         <div className="chat-box">
             {mssgChat.map(element => {

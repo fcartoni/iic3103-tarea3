@@ -8,11 +8,19 @@
   margin-top: 5%;
   margin-right: 60%;
   padding: 5px;
+  background-color: rgb(255, 255, 255);
+  
+}
+
+.color-font {
+  color: rgb(61, 61, 61);
 }
 
 .main{
   display: flex;
   flex-direction: row;
+  /* flex: 1 1;
+  order: 2; */
 }
 
 .chat-box{
@@ -32,7 +40,7 @@
 
 .nickname{
   margin-top: 10%;
-  background-color: rgb(183, 244, 255);
+  background-color: rgb(245, 243, 243);
   border: solid rgb(139, 139, 139);
   border-radius: 20px;
   margin-left: 30%;
@@ -40,12 +48,12 @@
   padding: 5%;
 }
 
+
+
 .map-info-container{
-    align-content: center;
-    align-items: center;
-    align-self: center;
     min-width: 80%;
     margin-left: 3%;
+
 }
 
 .align{
@@ -53,6 +61,10 @@
   flex-direction: column;
 }
 
+.form-container{
+  display: flex;
+  flex-direction: column;
+}
 
 
 .button-info-flights{
@@ -60,8 +72,8 @@
     padding:0.35em 1.2em;
     border:0.1em solid #FFFFFF;
     /* margin:0 0.3em 0.3em 0; */
-    margin-left: 0;
-    margin-right: 80%;
+    /* margin-left: 0;
+    margin-right: 80%; */
     border-radius:0.12em;
     box-sizing: border-box;
     text-decoration:none;
@@ -71,6 +83,7 @@
     background-color: rgb(46, 192, 250);
     text-align:center;
     transition: all 0.2s;
+    border-radius: 7px;
   }
 .button-info-flights:hover{
     color:#55cae7;
@@ -81,4 +94,68 @@
   .button-info-flights{
     display:block;
     margin:0.4em auto;}
+}
+
+.button-chat{
+  display:inline-block;
+  padding:0.35em 1.2em;
+  border:0.1em solid #FFFFFF;
+  /* margin:0 0.3em 0.3em 0; */
+  /* margin-left: 0;
+  margin-right: 80%; */
+  margin-top: 10%;
+  margin-left: 40%;
+  margin-right: 0;
+  border-radius:0.12em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  font-weight:300;
+  color:#FFFFFF;
+  background-color: rgb(46, 192, 250);
+  text-align:center;
+  transition: all 0.2s;
+  border-radius: 7px;
+}
+.button-chat:hover{
+  color:#55cae7;
+  background-color:#ffffff;
+}
+
+@media all and (max-width:30em){
+.button-chat{
+  display:block;
+  margin:0.4em auto;}
+}
+
+.button-nickname{
+  display:inline-block;
+  padding:0.35em 1.2em;
+  border:0.1em solid #FFFFFF;
+  /* margin:0 0.3em 0.3em 0; */
+  /* margin-left: 0;
+  margin-right: 80%; */
+  margin-top: 10%;
+  margin-left: 30%;
+  margin-right: 30%;
+  border-radius:0.12em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  font-weight:300;
+  color:#FFFFFF;
+  background-color: rgb(46, 192, 250);
+  text-align:center;
+  transition: all 0.2s;
+  border-radius: 7px;
+}
+.button-nickname:hover{
+  color:#55cae7;
+  background-color:#ffffff;
+}
+
+@media all and (max-width:30em){
+.button-nickname{
+  display:block;
+  margin:0.4em auto;}
 }
